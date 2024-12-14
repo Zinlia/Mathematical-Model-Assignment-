@@ -28,18 +28,7 @@ if __name__ == "__main__":
 
     # Reset the environment
     observation, info = env.reset(seed=42)
-
-    # Test RandomPolicy
-    rd_policy = RandomPolicy()
-    ep = 0
-    while ep < NUM_EPISODES:
-        action = rd_policy.get_action(observation, info)
-        observation, reward, terminated, truncated, info = env.step(action)
-
-        if terminated or truncated:
-            observation, info = env.reset(seed=ep)
-            print(info)
-            ep += 1
+ 
 
     # Uncomment the following code to test your policy
     # # Reset the environment
